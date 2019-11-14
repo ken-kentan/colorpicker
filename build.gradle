@@ -1,6 +1,30 @@
 apply plugin: 'com.android.library'
 
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.2'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
 android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        minSdkVersion 18
+        targetSdkVersion 29
+    }
+
     sourceSets.main {
         manifest.srcFile 'AndroidManifest.xml'
         java.srcDirs = ['src']
